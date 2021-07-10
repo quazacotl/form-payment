@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Form</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/index.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <form action="#" class="form animate__animated">
+        <div class="inner-wrapper">
+            <div class="form__subheader">Info</div>
+            <label class="form__label" for="email-input">Enter your email address</label>
+            <input class="form__input" type="email" id="email-input" name="email-input" placeholder="team@checkforpatent.com" autofocus>
+            <fieldset class="form__fieldset">
+                <legend class="form__subheader">Product 1</legend>
+                <label class="form__label" for="product-name1">Enter main keyword for the product</label>
+                <input type="text" name="product-name1" id="product-name1" class="form__input" placeholder="for example, sylicon wine cup">
+                <label class="form__label" for="product-link1">Enter link to the similar product as a reference</label>
+                <input type="text" name="product-link1" id="product-link1" class="form__input" placeholder="https://...">
+            </fieldset>
+            <div class="form__add-wrapper">
+                <div class="form__add-wrapper_header">Add more products</div>
+                <div class="form__add-wrapper_plus">+</div>
+            </div>
+            <div class="form__discount-text">We offer discount up to 36% for multiple checks</div>
+        </div>
+        <button class="form__submit">Submit and pay 24.99 USD</button>
+        <div class="form__secure-wrapper">
+            <img alt="lock" src="icon/lock.png" class="form__secure-wrapper_img">
+            <div class="form__secure-wrapper_text">Secure payment with Stripe</div>
+        </div>
+    </form>
+    <div class="form add-form animate__animated">
+        <div class="form__subheader add-form__subheader">Adding more products</div>
+        <div class="form__label add-form__label">The more items you check, the better the price.</div>
+        <div class="add-form__product-item" id="product5">
+            <div class="add-form__product-item_radio"></div>
+            <div class="add-form__product-item_wrapper">
+                <div class="add-form__product-item_name">5 products for 80 usd / 16$ for each</div>
+                <div class="add-form__product-item_discount">You safe 36% on each patent check </div>
+            </div>
+        </div>
+        <div class="add-form__product-item" id="product4">
+            <div class="add-form__product-item_radio"></div>
+            <div class="add-form__product-item_wrapper">
+                <div class="add-form__product-item_name">4 products for 72 usd / 18$ for each</div>
+                <div class="add-form__product-item_discount">You safe 28% on each patent check </div>
+            </div>
+        </div>
+        <div class="add-form__product-item" id="product3">
+            <div class="add-form__product-item_radio"></div>
+            <div class="add-form__product-item_wrapper">
+                <div class="add-form__product-item_name">3 products for 60 usd / 20$ for each</div>
+                <div class="add-form__product-item_discount">You safe 20% on each patent check </div>
+            </div>
+        </div>
+        <div class="add-form__product-item" id="product2">
+            <div class="add-form__product-item_radio"></div>
+            <div class="add-form__product-item_wrapper">
+                <div class="add-form__product-item_name">2 products for 44 usd / 22$ for each</div>
+                <div class="add-form__product-item_discount">You safe 12% on each patent check </div>
+            </div>
+        </div>
+        <div class="add-form__product-item" id="product1">
+            <div class="add-form__product-item_radio"></div>
+            <div class="add-form__product-item_wrapper">
+                <div class="add-form__product-item_name">1 product for 24.99 usd</div>
+            </div>
+        </div>
+        <button class="form__submit add-form__btn">Continue</button>
+    </div>
+    <div class="form success-form animate__animated">
+        <div class="form__subheader success-form__subheader">Successfull payment</div>
+        <div class="form__label success-form__label">Your request has been accepted and will be processed within 24 working hours. We will send you a payment details and all information to your email</div>
+        <picture class="success-form__pic">
+            <source type="image/webp" srcset="../img/success.webp">
+            <img class="success-form__img" src="../img/success.png" alt="success">
+        </picture>
+        <button class="form__submit success-form__btn">Back</button>
+    </div>
+    <div class="form fail-form animate__animated">
+        <div class="form__subheader success-form__subheader">Your payment failed</div>
+        <div class="form__label success-form__label">Sorry, but we’ve having trouble processing your payment. You have been not charged for this transaction.</div>
+        <picture class="fail-form__pic">
+            <source type="image/webp" srcset="../img/fail.webp">
+            <img class="fail-form__img" src="../img/fail.png" alt="success">
+        </picture>
+        <button class="form__submit fail-form__btn">Try to pay again</button>
+    </div>
+    <div class="dotted"></div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

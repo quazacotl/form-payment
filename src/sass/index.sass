@@ -1,0 +1,236 @@
+@import "fonts"
+@import "variables"
+@import "mixin"
+
+
+*, *:before, *:after
+  box-sizing: border-box
+  font-family: "Gilroy", sans-serif
+  color: var(--main-text-color)
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video
+  margin: 0
+  padding: 0
+  border: 0
+a
+  text-decoration: none
+  color: inherit
+  &:hover
+    color: inherit
+
+body
+  background-color: #F4F5FA
+
+.wrapper
+  margin: 50px auto
+  position: relative
+  width: var(--form-width)
+  height: var(--form-height)
+
+
+.dotted
+  position: absolute
+  z-index: -1
+  background-image: url("../img/dots.png")
+  width: 103px
+  height: 118px
+  top: -15px
+  right: -34px
+
+.inner-wrapper
+  height: 380px
+  width: auto
+  overflow: auto
+
+::-webkit-scrollbar
+  width: 4px
+  border-radius: 4px
+  background-color: #E1E3EE
+
+::-webkit-scrollbar-thumb
+  border-radius: 4px
+  background-color: var(--green-color)
+
+.form
+  z-index: 1
+  width: var(--form-width)
+  height: var(--form-height)
+  background-color: white
+  padding: 35px 15px 35px 35px
+  border-radius: 0 50px 50px 50px
+  box-shadow: 0 0 30px #e3e4e7
+  &__subheader
+    @include title-text
+  &__label
+    @include main-text
+    display: block
+    margin-top: 12px
+  &__input
+    width: 370px
+    height: 40px
+    border: none
+    border-bottom: 2px solid #E1E3EE
+    transition: all .4s
+    font-size: 19px
+    &:focus
+      outline-width: 0
+      border: none
+      border-bottom: 2px solid var(--green-color)
+    &::placeholder
+      @include placeholder-text
+  &__fieldset
+    margin-top: 25px
+  &__add-wrapper
+    width: 100%
+    cursor: pointer
+    margin-top: 25px
+    display: flex
+    align-items: center
+    &_header
+      @include title-text
+      color: var(--green-color)
+    &_plus
+      margin-left: 6px
+      border-radius: 100%
+      width: 13px
+      height: 13px
+      border: 1px solid var(--green-color)
+      display: flex
+      align-items: center
+      justify-content: center
+      color: var(--green-color)
+      font-size: 16px
+  &__discount-text
+    margin-top: 12px
+    @include main-text
+  &__submit
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-top: 19px
+    width: 370px
+    height: 45px
+    background-color: var(--green-color)
+    border-radius: 10px
+    color: #ffffff
+    border: none
+    cursor: pointer
+    font-style: normal
+    font-weight: bold
+    font-size: 18px
+    line-height: 22px
+    &:active
+      background-color: #309400
+  &__secure-wrapper
+    margin-top: 11px
+    display: flex
+    align-items: center
+    justify-content: center
+    &_img
+      margin-right: 3px
+      display: block
+    &_text
+      font-style: normal
+      font-weight: normal
+      font-size: 14px
+      line-height: 17px
+      color: #AFB4CC
+
+.add-form
+  display: none
+  &__label
+    margin-top: 12px
+  &__product-item
+    cursor: pointer
+    padding-left: 17px
+    width: 370px
+    height: 60px
+    display: flex
+    align-items: center
+    border: 1.5px solid #DDDFED
+    &_radio
+      width: 22px
+      height: 22px
+      border-radius: 100%
+      border: 1.5px solid #E1E3EE
+      display: flex
+      align-items: center
+      justify-content: center
+      span
+        background-color: var(--green-color)
+        width: 12px
+        height: 12px
+        border-radius: 100%
+    &_wrapper
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      margin-left: 12px
+    &_name
+      @include add-item-text
+    &_discount
+      font-style: normal
+      font-weight: normal
+      font-size: 13px
+      line-height: 16px
+      margin-top: 5px
+    &:hover
+      background-color: #F4F5FA
+  div:nth-child(3)
+    border-radius: 25px 25px 0 0
+    margin-top: 10px
+  div:nth-child(7)
+    border-radius: 0 0 25px 25px
+  div:nth-child(4), div:nth-child(5), div:nth-child(6), div:nth-child(7)
+    border-top: none
+
+.active-item .add-form__product-item_discount
+  color: var(--green-color)
+
+.additional-product
+  z-index: 2
+  &__wrapper
+    display: flex
+    align-items: center
+  &__delete
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 13px
+    height: 13px
+    border-radius: 100%
+    border: 1px solid var(--green-color)
+    font-size: 17px
+    color: var(--green-color)
+    cursor: pointer
+    margin-left: 5px
+
+.loading-img
+  display: block
+  width: 32px
+  height: 32px
+
+.success-form
+  z-index: 2
+  display: none
+  padding: 35px
+  &__img
+    display: block
+    margin: 34px auto 0
+  &__btn
+    margin-top: 96px
+    &:active
+      background-color: #309400
+
+.fail-form
+  display: none
+  padding: 35px
+  z-index: 2
+  &__img
+    display: block
+    margin: 4px auto 0
+  &__btn
+    margin-top: 36px
+    background-color: #EA717F
+    &:active
+      background-color: #9a4952
