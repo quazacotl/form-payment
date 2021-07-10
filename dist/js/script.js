@@ -942,6 +942,7 @@ var productItems = document.querySelectorAll('.add-form__product-item');
 var addFormBtn = document.querySelector('.add-form__btn');
 var formBtn = document.querySelector('.form__submit');
 var addWrapper = document.querySelector('.form__add-wrapper');
+var siteName = 'https://payment.guildenstern.ru/';
 var productCount = 1;
 var success = true;
 
@@ -1007,7 +1008,7 @@ var showForm = function showForm(form, pathname) {
 var backForm = function backForm(form, btnSelector) {
   var backBtn = document.querySelector(".".concat(btnSelector));
   backBtn.addEventListener('click', function () {
-    if (form === successForm) window.location = 'http://localhost:3000/';else {
+    if (form === successForm) window.location = siteName;else {
       animateOut(form, 'animate__flipInY');
       animateIn(mainForm, 'animate__flipInY');
       window.history.back();

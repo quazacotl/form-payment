@@ -7,6 +7,7 @@ const productItems = document.querySelectorAll('.add-form__product-item');
 const addFormBtn = document.querySelector('.add-form__btn');
 const formBtn = document.querySelector('.form__submit');
 const addWrapper = document.querySelector('.form__add-wrapper');
+const siteName = 'https://payment.guildenstern.ru/'
 
 let productCount = 1
 let success = true
@@ -66,7 +67,7 @@ const showForm = (form, pathname) => {
 const backForm = (form, btnSelector) => {
     const backBtn = document.querySelector(`.${btnSelector}`);
     backBtn.addEventListener('click', () => {
-        if (form === successForm) window.location = 'http://localhost:3000/'
+        if (form === successForm) window.location = siteName
         else {
             animateOut(form, 'animate__flipInY')
             animateIn(mainForm, 'animate__flipInY')
