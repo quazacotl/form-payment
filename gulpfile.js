@@ -128,32 +128,4 @@ gulp.task('build-js', () => {
 });
 
 
-gulp.task("build-prod-js", () => {
-    return gulp.src("./src/js/index.js")
-        .pipe(webpack({
-            mode: 'production',
-            output: {
-                filename: 'bundle.js'
-            },
-            module: {
-                rules: [
-                    {
-                        test: /\.m?js$/,
-                        exclude: /(node_modules|bower_components)/,
-                        use: {
-                            loader: 'babel-loader',
-                            options: {
-                                presets: [['@babel/preset-env', {
-                                    corejs: 3,
-                                    useBuiltIns: "usage"
-                                }]]
-                            }
-                        }
-                    }
-                ]
-            }
-        }))
-        .pipe(gulp.dest(dist + '/js'));
-});
-
-gulp.task('default', gulp.parallel('server', 'watch', 'html', 'sass', 'font', 'icons', 'build-js', "images:webp", 'images'));
+gulp.task('default', gulp.parallel('server', 'watch', 'html', 'sass', 'font', 'icons', 'build-js', 'images:webp', 'images'));
